@@ -490,6 +490,7 @@ GameObject:
   - component: {fileID: 5813066686293690053}
   - component: {fileID: 5813066686293690050}
   - component: {fileID: 5813066686293690051}
+  - component: {fileID: 5813066686293690052}
   m_Layer: 5
   m_Name: Interaction
   m_TagString: Untagged
@@ -613,6 +614,22 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &5813066686293690052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5813066686293690054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 685aef0a6d205be43b46ccb46d8258c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractionLabel: {fileID: 5813066686293690051}
+  InteractionFeedbackLabel: {fileID: 1047524450}
+  AudioSource: {fileID: 5813066687269062254}
+  InteractionFailedSound: {fileID: 11400000, guid: 4a43ecb89a518654e8b56fd5fc2204f6, type: 2}
 --- !u!1 &5813066686874615094
 GameObject:
   m_ObjectHideFlags: 0
@@ -1183,6 +1200,7 @@ GameObject:
   - component: {fileID: 5813066687577100425}
   - component: {fileID: 5813066687577100439}
   - component: {fileID: 5813066687577100424}
+  - component: {fileID: 5813066687577100438}
   m_Layer: 5
   m_Name: HealthPanel
   m_TagString: Untagged
@@ -1249,6 +1267,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5813066687577100438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5813066687577100426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13c91606b7093b54cb8af27306467f0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HealthComponent: {fileID: 0}
+  IsPlayerHealthUI: 1
+  HealthFillBar: {fileID: 5813066687010478868}
+  HealthTextLabel: {fileID: 5813066685972556415}
 --- !u!1 &5813066687639107298
 GameObject:
   m_ObjectHideFlags: 0
@@ -1260,6 +1294,7 @@ GameObject:
   - component: {fileID: 5813066687639107297}
   - component: {fileID: 5813066687639107311}
   - component: {fileID: 5813066687639107296}
+  - component: {fileID: 5813066687639107310}
   m_Layer: 5
   m_Name: ItemPanel
   m_TagString: Untagged
@@ -1327,3 +1362,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5813066687639107310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5813066687639107298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d28c713496286a49bb9d8e7dbc53e5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InventoryText: {fileID: 5813066685821966198}
+  ItemSprite: {fileID: 5813066686874615092}
+  NextItemPanel: {fileID: 5813066686039385979}
+  NextItemSprite: {fileID: 5813066687380704626}

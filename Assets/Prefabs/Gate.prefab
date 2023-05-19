@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3714623386990156992}
+  - component: {fileID: 3714623386990156995}
   - component: {fileID: 3714623386990156994}
   m_Layer: 0
   m_Name: Gate
@@ -34,6 +35,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3714623386990156995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3714623386990156993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce73ce88275145b489e79760d348c85f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OpenAngle: 110
+  Locked: 1
+  InteractionTriggers:
+  - {fileID: 3714623387891382813}
+  AudioSource: {fileID: 3714623386990156994}
+  OpenSound: {fileID: 11400000, guid: 8d96e384dc23935429caf03929886f17, type: 2}
+  GateLeafOne: {fileID: 3714623387357895472}
+  GateLeafTwo: {fileID: 3714623388598417270}
 --- !u!82 &3714623386990156994
 AudioSource:
   m_ObjectHideFlags: 0
@@ -139,6 +160,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3714623387891382811}
+  - component: {fileID: 3714623387891382813}
   - component: {fileID: 3714623387891382810}
   m_Layer: 8
   m_Name: Interaction
@@ -161,6 +183,20 @@ Transform:
   m_Father: {fileID: 3714623386990156992}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3714623387891382813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3714623387891382808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ffd32a177e12744ea9769744de19688, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Door: {fileID: 3714623386990156995}
+  CanOpenDoorFromThisSide: 1
 --- !u!65 &3714623387891382810
 BoxCollider:
   m_ObjectHideFlags: 0

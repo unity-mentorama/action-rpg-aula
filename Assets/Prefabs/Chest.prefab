@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1002039313208531687}
+  - component: {fileID: 5536323021753771817}
   - component: {fileID: 411924882}
   - component: {fileID: 1965699636978689499}
   - component: {fileID: 2430886601393063761}
@@ -36,6 +37,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5536323021753771817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8929589423702217963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84da9e6adf770ec4290ff771248ae990, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Lid: {fileID: 6063168464479643951}
+  Item: {fileID: 0}
+  Particles: {fileID: 5934830951424095033}
+  AudioSource: {fileID: 1965699636978689499}
+  ChestOpenedSound: {fileID: 11400000, guid: 4a4b579128069144cbea62c09b1e0e41, type: 2}
 --- !u!65 &411924882
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -291,6 +309,11 @@ PrefabInstance:
 --- !u!4 &5934830951405832445 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 468624, guid: c83a45822d0d3f94991e76a87670125c, type: 3}
+  m_PrefabInstance: {fileID: 5934830951406169709}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &5934830951424095033 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 19832148, guid: c83a45822d0d3f94991e76a87670125c, type: 3}
   m_PrefabInstance: {fileID: 5934830951406169709}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6029768931170160324

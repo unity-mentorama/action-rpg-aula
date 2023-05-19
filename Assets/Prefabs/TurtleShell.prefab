@@ -221,6 +221,7 @@ GameObject:
   - component: {fileID: 2463107435402244051}
   - component: {fileID: 2463107435402244060}
   - component: {fileID: 2463107435402244061}
+  - component: {fileID: 2463107435402244062}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -309,6 +310,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &2463107435402244062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2463107435402244056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6abe70bac2b13574b808fe249bdb59da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2463107436884100663
 GameObject:
   m_ObjectHideFlags: 0
@@ -319,6 +332,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2463107436884100660}
   - component: {fileID: 2463107436884100661}
+  - component: {fileID: 2463107436884100662}
   m_Layer: 6
   m_Name: HurBox
   m_TagString: Hurt
@@ -353,6 +367,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2463107436884100662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2463107436884100663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06735eba26dbb1048bb82dea612a5d6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Power: 2
 --- !u!1 &2463107436930574578
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,6 +391,7 @@ GameObject:
   - component: {fileID: 2463107436930574577}
   - component: {fileID: 2463107436930574582}
   - component: {fileID: 2463107436930574583}
+  - component: {fileID: 2463107436930574576}
   m_Layer: 5
   m_Name: HealthPanel
   m_TagString: Untagged
@@ -430,6 +458,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2463107436930574576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2463107436930574578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13c91606b7093b54cb8af27306467f0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HealthFillBar: {fileID: 2463107435095470396}
+  HealthTextLabel: {fileID: 2463107435151006146}
+  HealthComponent: {fileID: 2463107437153385698}
 --- !u!1 &2463107437153385709
 GameObject:
   m_ObjectHideFlags: 0
@@ -442,6 +485,9 @@ GameObject:
   - component: {fileID: 2463107437153385699}
   - component: {fileID: 2463107437153385703}
   - component: {fileID: 2463107437153385696}
+  - component: {fileID: 2463107437153385697}
+  - component: {fileID: 2463107437153385698}
+  - component: {fileID: 2463107437153385701}
   - component: {fileID: 2463107437153385702}
   m_Layer: 7
   m_Name: TurtleShell
@@ -518,6 +564,69 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2463107437153385697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2463107437153385709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42c309efba9f5894f800be72ffc6737d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Data:
+    VisibleDistance: 7
+    ViewAngle: 60
+    WalkSpeed: 2
+    ChaseSpeed: 4
+    IdleDuration: 5
+    AttackDistance: 1.5
+    AttackDelay: 0.2
+    AttackCooldown: 2
+    CharacterMotor: {fileID: 2463107437153385699}
+    PatrolPoints: []
+    Animator: {fileID: 2557435151410759140}
+    AnimationEvents: {fileID: 2463107435600834470}
+    HurtBox: {fileID: 2463107436884100663}
+    HealthComponent: {fileID: 2463107437153385698}
+    PlayerTransform: {fileID: 0}
+    NextAttackCooldown: 0
+  _currentState: 0
+--- !u!114 &2463107437153385698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2463107437153385709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 240c2b01de288e74a8a36d80da5df225, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 5
+--- !u!114 &2463107437153385701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2463107437153385709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92b27154922fc7648be85f87d5b30e3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AnimationEvents: {fileID: 2463107435600834470}
+  EnemyAI: {fileID: 2463107437153385697}
+  HealthComponent: {fileID: 2463107437153385698}
+  AudioSource: {fileID: 2463107437153385702}
+  Footstep: {fileID: 11400000, guid: 82f7d427f6bc1d646bca898ef3838a48, type: 2}
+  Attack: {fileID: 11400000, guid: ad3f4fa035892ca43af745b15c2f3887, type: 2}
+  Hit: {fileID: 11400000, guid: d6ee6571a1d1a6545a91888d1974bdf2, type: 2}
+  Die: {fileID: 11400000, guid: e0a26e0d20f9e0b43abc87a5b1c0614b, type: 2}
 --- !u!82 &2463107437153385702
 AudioSource:
   m_ObjectHideFlags: 0
@@ -710,6 +819,11 @@ GameObject:
 --- !u!4 &2467954561926720442 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4882590064214274, guid: 3aec22b5d3f3c2947bb81040b56e5f96, type: 3}
+  m_PrefabInstance: {fileID: 2463107436147305144}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2557435151410759140 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 95528395651247964, guid: 3aec22b5d3f3c2947bb81040b56e5f96, type: 3}
   m_PrefabInstance: {fileID: 2463107436147305144}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &2463107435600834470

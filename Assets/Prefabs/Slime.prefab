@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2246174976887711402}
   - component: {fileID: 2246174976887711403}
   - component: {fileID: 2246174976887711412}
+  - component: {fileID: 2246174976887711401}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -100,6 +101,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &2246174976887711401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2246174976887711414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6abe70bac2b13574b808fe249bdb59da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2246174977128986660
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,6 +125,9 @@ GameObject:
   - component: {fileID: 2246174977128986650}
   - component: {fileID: 2246174977128986648}
   - component: {fileID: 2246174977128986655}
+  - component: {fileID: 2246174977128986654}
+  - component: {fileID: 2246174977128986649}
+  - component: {fileID: 2246174977128986652}
   - component: {fileID: 2246174977128986653}
   m_Layer: 7
   m_Name: Slime
@@ -188,6 +204,69 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2246174977128986654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2246174977128986660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42c309efba9f5894f800be72ffc6737d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Data:
+    VisibleDistance: 7
+    ViewAngle: 60
+    WalkSpeed: 2
+    ChaseSpeed: 4
+    IdleDuration: 5
+    AttackDistance: 1.5
+    AttackDelay: 0.2
+    AttackCooldown: 2
+    CharacterMotor: {fileID: 2246174977128986650}
+    PatrolPoints: []
+    Animator: {fileID: 2197522178895832417}
+    AnimationEvents: {fileID: 6668884915671100160}
+    HurtBox: {fileID: 2246174977809462110}
+    HealthComponent: {fileID: 2246174977128986649}
+    PlayerTransform: {fileID: 0}
+    NextAttackCooldown: 0
+  _currentState: 0
+--- !u!114 &2246174977128986649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2246174977128986660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 240c2b01de288e74a8a36d80da5df225, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 3
+--- !u!114 &2246174977128986652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2246174977128986660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92b27154922fc7648be85f87d5b30e3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AnimationEvents: {fileID: 6668884915671100160}
+  EnemyAI: {fileID: 2246174977128986654}
+  HealthComponent: {fileID: 2246174977128986649}
+  AudioSource: {fileID: 2246174977128986653}
+  Footstep: {fileID: 11400000, guid: f81862308556bf04c80d1199a2429615, type: 2}
+  Attack: {fileID: 11400000, guid: 238664da140aad64398ec659d781a1a0, type: 2}
+  Hit: {fileID: 11400000, guid: 628bf53151efddb46b6e09b232c47086, type: 2}
+  Die: {fileID: 11400000, guid: 43a53ca048231ab4380acef186a0beb4, type: 2}
 --- !u!82 &2246174977128986653
 AudioSource:
   m_ObjectHideFlags: 0
@@ -455,6 +534,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2246174977809462109}
   - component: {fileID: 2246174977809462108}
+  - component: {fileID: 2246174977809462099}
   m_Layer: 6
   m_Name: HurBox
   m_TagString: Hurt
@@ -489,6 +569,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2246174977809462099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2246174977809462110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06735eba26dbb1048bb82dea612a5d6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Power: 1
 --- !u!1 &2246174977943984143
 GameObject:
   m_ObjectHideFlags: 0
@@ -500,6 +593,7 @@ GameObject:
   - component: {fileID: 2246174977943984142}
   - component: {fileID: 2246174977943984131}
   - component: {fileID: 2246174977943984140}
+  - component: {fileID: 2246174977943984141}
   m_Layer: 5
   m_Name: HealthPanel
   m_TagString: Untagged
@@ -566,6 +660,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2246174977943984141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2246174977943984143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13c91606b7093b54cb8af27306467f0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HealthFillBar: {fileID: 2246174978261548983}
+  HealthTextLabel: {fileID: 2246174977336341730}
+  HealthComponent: {fileID: 2246174977128986649}
 --- !u!1 &2246174978261548977
 GameObject:
   m_ObjectHideFlags: 0
@@ -707,3 +816,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4885079432260988, guid: a817c29ea6847604bb2c6c51d9a74bf1, type: 3}
   m_PrefabInstance: {fileID: 2246174976728937951}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &2197522178895832417 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 95471671811264702, guid: a817c29ea6847604bb2c6c51d9a74bf1, type: 3}
+  m_PrefabInstance: {fileID: 2246174976728937951}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6668884915671100160 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4873078702109744863, guid: a817c29ea6847604bb2c6c51d9a74bf1, type: 3}
+  m_PrefabInstance: {fileID: 2246174976728937951}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94c4e48456df7f843b33bcddfa7c1048, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
