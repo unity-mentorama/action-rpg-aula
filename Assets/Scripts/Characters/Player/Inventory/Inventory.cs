@@ -27,11 +27,15 @@ public class Inventory : MonoBehaviour
 			return;
 		}
 
-		var itemIndex = _currentIndex;
+		// O Use da sword adiciona um item no inventário e isso faz o
+		// _currentIndex atualizar, precisamos salvar o _currentIndex
+		// antes do uso nesse caso para remover a espada correta do
+		// inventário depois.
+		var originalCurrentIndex = _currentIndex;
 		if (_items[_currentIndex].Use(user))
 		{
 			OnItemUsed?.Invoke(_items[_currentIndex].Type);
-			_items.RemoveAt(itemIndex);
+			_items.RemoveAt(originalCurrentIndex);
 
 			if (_currentIndex == _items.Count)
 			{

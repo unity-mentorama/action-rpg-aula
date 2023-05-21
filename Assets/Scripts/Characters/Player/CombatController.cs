@@ -11,7 +11,6 @@ public class CombatController : MonoBehaviour
 	}
 
 	[Header("Values")]
-	public float AttackMoveSpeed = 0.5f;
 	public float AttackBufferReset = 1f;
 	public float ComboCooldown = 0.5f;
 

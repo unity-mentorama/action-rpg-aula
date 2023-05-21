@@ -1,9 +1,9 @@
 using UnityEngine;
 public static class VectorExtensions
 {
-	public static Vector2 XZ(this Vector3 vv)
+	public static Vector2 XZ(this Vector3 vector)
 	{
-		return new Vector2(vv.x, vv.z);
+		return new Vector2(vector.x, vector.z);
 	}
 
 	public static float FlatDistanceTo(this Vector3 from, Vector3 unto)
