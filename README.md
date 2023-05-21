@@ -19,6 +19,8 @@ Sprites e outros assets são todos baseados em Assets Free da Unity Asset Store.
 
 [RPG&Fantasy Mobile GUI with Source Files](https://assetstore.unity.com/packages/2d/gui/rpg-fantasy-mobile-gui-with-source-files-166086)
 
+[Simple FX - Cartoon Particles](https://assetstore.unity.com/packages/vfx/particles/simple-fx-cartoon-particles-67834)
+
 [DOTween (HOTween v2)](https://assetstore.unity.com/packages/tools/animation/dotween-hotween-v2-27676)
 
 ## Outros links úteis
