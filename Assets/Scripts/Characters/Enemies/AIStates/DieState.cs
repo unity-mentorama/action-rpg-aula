@@ -16,6 +16,7 @@ public class DieState : EnemyMachineState
 
 		_dieTimer = 3f;
 		Data.CharacterMotor.speed = 0;
+		Data.CharacterMotor.gameObject.GetComponent<Collider>().enabled = false;
 
 		base.Enter();
 	}

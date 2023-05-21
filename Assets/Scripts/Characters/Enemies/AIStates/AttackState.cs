@@ -21,8 +21,6 @@ public class AttackState : BaseState
 		Data.AnimationEvents.OnAttackEnded += AnimationEvents_OnAttackEnded;
 		Data.AnimationEvents.OnAttackAnimatioEnded += AnimationEvents_OnAttackAnimatioEnded;
 
-		EnemyAI.TriggerAttackEvent();
-
 		base.Enter();
 	}
 
@@ -38,8 +36,7 @@ public class AttackState : BaseState
 
 	private void AnimationEvents_OnAttackAnimatioEnded(int obj)
 	{
-		NextState = new ChaseState(EnemyAI);
-		Stage = Event.Exit;
+		ChangeState(new ChaseState(EnemyAI));
 	}
 
 	public override void Update()
@@ -49,6 +46,7 @@ public class AttackState : BaseState
 		if (!_attacked && _delayTimer < 0)
 		{
 			Data.Animator.SetTrigger("Attack1");
+			EnemyAI.TriggerAttackEvent();
 			_attacked = true;
 		}
 	}

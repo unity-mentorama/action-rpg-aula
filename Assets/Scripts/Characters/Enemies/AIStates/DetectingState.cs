@@ -15,8 +15,7 @@
 	{
 		if (CanSeePlayer())
 		{
-			NextState = new ChaseState(EnemyAI);
-			Stage = Event.Exit;
+			ChangeState(new ChaseState(EnemyAI));
 		}
 	}
 

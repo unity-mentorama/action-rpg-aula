@@ -26,6 +26,7 @@ public abstract partial class EnemyMachineState
 	public EnemyMachineState(EnemyAI enemyAI)
 	{
 		EnemyAI = enemyAI;
+		Stage = Event.Enter;
 	}
 
 	public virtual void Enter() { Stage = Event.Update; }
@@ -46,10 +47,19 @@ public abstract partial class EnemyMachineState
 
 			case Event.Exit:
 				Exit();
+
+				// Corige um bug onde as vezes o inimigo não morria
+				NextState.Enter();
 				return NextState;
 		}
 
 		return this;
+	}
+
+	protected void ChangeState(EnemyMachineState nextState)
+	{
+		NextState = nextState;
+		Stage = Event.Exit;
 	}
 
 	protected bool CanSensePlayer()

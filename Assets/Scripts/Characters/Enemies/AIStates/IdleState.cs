@@ -24,14 +24,12 @@ public class IdleState : DetectingState
 		{
 			if (Data.PreviousStates.Count > 0)
 			{
-				NextState = Data.PreviousStates.Pop();
+				ChangeState(Data.PreviousStates.Pop());
 			}
 			else
 			{
-				NextState = new PatrolState(EnemyAI);
+				ChangeState(new PatrolState(EnemyAI));
 			}
-
-			Stage = Event.Exit;
 		}
 		else
 		{

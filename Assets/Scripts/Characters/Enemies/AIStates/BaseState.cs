@@ -16,13 +16,11 @@
 	{
 		if (Data.HealthComponent.IsAlive)
 		{
-			NextState = new HurtState(EnemyAI);
-			Stage = Event.Exit;
+			ChangeState(new HurtState(EnemyAI));
 		}
 		else
 		{
-			NextState = new DieState(EnemyAI);
-			Stage = Event.Exit;
+			ChangeState(new DieState(EnemyAI));
 		}
 	}
 

@@ -34,15 +34,13 @@ public class ChaseState : BaseState
 				// Dessa forma o cooldown é persistido entre qualquer estados.
 				Data.NextAttackCooldown = Time.time + Data.AttackCooldown;
 
-				NextState = new AttackState(EnemyAI);
-				Stage = Event.Exit;
+				ChangeState(new AttackState(EnemyAI));
 			}
 		}
 		// Em combate o NPC fica mais "inteligente" e usa o 'Sense' ao invés do 'See'
 		else if (!CanSensePlayer())
 		{
-			NextState = new PatrolState(EnemyAI);
-			Stage = Event.Exit;
+			ChangeState(new PatrolState(EnemyAI));
 		}
 	}
 

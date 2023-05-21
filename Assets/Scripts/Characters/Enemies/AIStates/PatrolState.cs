@@ -21,8 +21,7 @@
 	{
 		if (Data.CharacterMotor.transform.position.FlatDistanceTo(Data.PatrolPoints[_currentIndex].position) <= 0.1f)
 		{
-			NextState = new IdleState(EnemyAI);
-			Stage = Event.Exit;
+			ChangeState(new IdleState(EnemyAI));
 		}
 		else
 		{

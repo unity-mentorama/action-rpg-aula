@@ -20,8 +20,7 @@
 
 	private void AnimationEvents_OnHitAnimatioEnded()
 	{
-		NextState = new ChaseState(EnemyAI);
-		Stage = Event.Exit;
+		ChangeState(new ChaseState(EnemyAI));
 	}
 
 	public override void Update()
