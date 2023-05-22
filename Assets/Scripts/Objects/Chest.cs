@@ -15,7 +15,7 @@ public class Chest : Interactable
 		user.GetComponent<Inventory>().AddItem(Item);
 
 		//Lid.transform.Rotate(-70, 0, 0);
-		Lid.transform.DORotate(Lid.transform.rotation.eulerAngles + new Vector3(-70, 0, 0), 1f).SetEase(Ease.InOutBack);
+		Lid.transform.DORotate(Lid.transform.rotation.eulerAngles + new Vector3(-70, 0, 0), 1f).SetEase(Ease.OutBack);
 		Particles.Stop();
 
 		GetComponent<BoxCollider>().enabled = false;
