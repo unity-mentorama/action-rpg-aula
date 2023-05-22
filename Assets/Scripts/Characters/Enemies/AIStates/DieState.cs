@@ -7,7 +7,7 @@ public class DieState : EnemyMachineState
 	public DieState(EnemyAI enemyAI)
 		: base(enemyAI)
 	{
-		Name = EnemyState.Attack;
+		Name = EnemyState.Die;
 	}
 
 	public override void Enter()

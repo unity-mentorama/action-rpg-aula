@@ -3,7 +3,7 @@
 	public HurtState(EnemyAI enemyAI)
 		: base(enemyAI)
 	{
-		Name = EnemyState.Attack;
+		Name = EnemyState.Hurt;
 	}
 
 	public override void Enter()
