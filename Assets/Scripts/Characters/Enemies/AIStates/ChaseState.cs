@@ -40,7 +40,14 @@ public class ChaseState : BaseState
 		// Em combate o NPC fica mais "inteligente" e usa o 'Sense' ao invés do 'See'
 		else if (!CanSensePlayer())
 		{
-			ChangeState(new PatrolState(EnemyAI));
+			if (Data.PreviousStates.Count > 0)
+			{
+				ChangeState(Data.PreviousStates.Pop());
+			}
+			else
+			{
+				ChangeState(new PatrolState(EnemyAI));
+			}
 		}
 	}
 
