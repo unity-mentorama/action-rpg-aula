@@ -6,9 +6,7 @@ public class InteractionController : MonoBehaviour
 	public Inventory PlayerInventory;
 	public Health HealthComponent;
 
-	private Interactable _currentInteractable;
-
-	public Interactable CurrentInteractable => _currentInteractable;
+	public Interactable CurrentInteractable { get; private set; }
 
 	public event Action<bool> OnInteractionToggled;
 	public event Action<string> OnInteractionFailed;
@@ -20,11 +18,11 @@ public class InteractionController : MonoBehaviour
 			return;
 		}
 
-		if (Input.GetKeyDown(KeyCode.E) && _currentInteractable != null)
+		if (Input.GetKeyDown(KeyCode.E) && CurrentInteractable != null)
 		{
-			if (_currentInteractable.Interact(gameObject, out string failureReason))
+			if (CurrentInteractable.Interact(gameObject, out string failureReason))
 			{
-				_currentInteractable = null;
+				CurrentInteractable = null;
 				OnInteractionToggled?.Invoke(false);
 			}
 			else
@@ -48,8 +46,8 @@ public class InteractionController : MonoBehaviour
 	{
 		if (other.CompareTag("Interact"))
 		{
-			_currentInteractable = other.GetComponent<Interactable>();
-			if (_currentInteractable.enabled)
+			CurrentInteractable = other.GetComponent<Interactable>();
+			if (CurrentInteractable.enabled)
 			{
 				OnInteractionToggled?.Invoke(true);
 			}
@@ -60,7 +58,7 @@ public class InteractionController : MonoBehaviour
 	{
 		if (other.CompareTag("Interact"))
 		{
-			_currentInteractable = null;
+			CurrentInteractable = null;
 			OnInteractionToggled?.Invoke(false);
 		}
 	}
