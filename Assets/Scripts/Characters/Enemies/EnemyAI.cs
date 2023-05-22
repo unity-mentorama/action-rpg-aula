@@ -39,7 +39,13 @@ public class EnemyAI : MonoBehaviour
 
 	private void OnTriggerEnter(Collider other)
 	{
-		if (other.CompareTag("Hurt"))
+		// O bug que encontramos na aula acontecia somente quando dois inimigos atacavam
+		// juntos. O HurtBox deles por estarem ambos na Layer de Player colidiam uma com
+		// a do outro e causava esse OnTriggerEnter no objeto parent a disparar. Isso pois
+		// o comportamento padrão dos triggers é repassar seus eventos aos objetos parent.
+		// Para resolver isso adicionei uma comparação de tag adicional para garantir
+		// que a colisão veio do Hurtbox do Player.
+		if (other.CompareTag("Hurt") && other.transform.parent.CompareTag("Player"))
 		{
 			var damage = other.GetComponent<AttackPower>().Power;
 			Data.HealthComponent.DealDamage(damage);
