@@ -27,3 +27,5 @@ Sprites e outros assets são todos baseados em Assets Free da Unity Asset Store.
 [Documentação do DOTween](http://dotween.demigiant.com/documentation.php)
 
 [Mixamo](https://www.mixamo.com/)
+
+[Curvas de Atenuação](https://easings.net/pt-br)
